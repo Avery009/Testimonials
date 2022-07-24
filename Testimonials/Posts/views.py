@@ -73,7 +73,7 @@ def viewtestimonial(request,testimonial_id):
 		template = loader.get_template('error.html')
 	return HttpResponse(template.render(context,request))
 
-def givethanks(request, testimonial_id):
+def thank(request, testimonial_id):
 	if request.method == 'GET':
 		try:
 			testimonial = Testimonial.objects.get(pk=testimonial_id)
