@@ -77,13 +77,13 @@ def thank(request, testimonial_id):
 	if request.method == 'GET':
 		try:
 			testimonial = Testimonial.objects.get(pk=testimonial_id)
-			form = forms.Testimonial()
+			form = forms.Thanks()
 			template = loader.get_template('testimonial.html')
 			context = {
-				't_id' : testimonial_id,
-				't_title' : testimonial.testimonial_title,
-				't_description' : testiomonial.testimonial_description,
-				't_count' : testimonial.testimonial_count
+				'testimonial_id' : testimonial_id,
+				'testimonial_title' : testimonial.testimonial_title,
+				'testimonial_description' : testiomonial.testimonial_description,
+				'testimonial_count' : testimonial.testimonial_count
 			}
 		except Exception:
 			form = forms.Testimonial()
