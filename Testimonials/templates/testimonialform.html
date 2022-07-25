@@ -7,7 +7,7 @@
 {% bootstrap_messages %}
 
 {# Display a form #}
-<form action="enter/" method="post" class="form">
+<form action="/enter/" method="post" class="form">
   {% csrf_token %}
   {% bootstrap_form form %}
   {% buttons %}

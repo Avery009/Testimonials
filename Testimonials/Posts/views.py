@@ -28,11 +28,11 @@ def entertestimonial(request):
 		form = forms.TestimonialEntry(request.POST)
 		if form.is_valid():
 			td = datetime.datetime.now()
-			tt = form.cleaned_data['prayer_title']
-			td = form.cleaned_data['prayer_description']
+			tt = form.cleaned_data['testimonial_title']
+			ted = form.cleaned_data['testimonial_description']
 			tc = '1'
 			try:
-				p = Testimonial(testimonial_title=tt,testimonial_date=td,testimonial_description=td,thanks_count=tc)
+				p = Testimonial(testimonial_title=tt,testimonial_date=td,testimonial_description=ted,thanks_count=tc)
 				p.save()
 				return redirect('/')
 			except Exception as e:
@@ -78,12 +78,12 @@ def thank(request, testimonial_id):
 		try:
 			testimonial = Testimonial.objects.get(pk=testimonial_id)
 			form = forms.Thanks()
-			template = loader.get_template('testimonial.html')
+			template = loader.get_template('thank.html')
 			context = {
 				'testimonial_id' : testimonial_id,
 				'testimonial_title' : testimonial.testimonial_title,
 				'testimonial_description' : testiomonial.testimonial_description,
-				'testimonial_count' : testimonial.testimonial_count
+				'thanks_count' : testimonial.thanks_count
 			}
 		except Exception:
 			form = forms.Testimonial()
