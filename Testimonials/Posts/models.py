@@ -6,4 +6,4 @@ class Testimonial(models.Model):
 	testimonial_title = models.CharField(max_length=100, blank=False, null=False)
 	testimonial_date = models.DateTimeField(null=False)
 	testimonial_description = models.CharField(max_length=1000,null=False)
-	testimonial_count = models.IntegerField(null=False)
+	thanks_count = models.IntegerField(null=False)

@@ -14,7 +14,7 @@
 {% if testimonial_list %}
 {% for testimonial in testimonial_list %}
 <div class="alert alert-secondary">
-<h3><span class="badge badge-success">{{ testimonial.thanks_count }}</span>	<a href='view/{{ testimonial.testimonial_id }}'>{{ testimonial.testimonial_description }}</a><a href='testimonial/{{ testimonial.testimonial_id }}'><button align="right" type="button" class="btn btn-success float-right">Give Thanks</button></a></h3>
+<h3><span class="badge badge-success">{{ testimonial.thanks_count }}</span>	<a href='view/{{ testimonial.testimonial_id }}'>{{ testimonial.testimonial_description }}</a><a href='thank/{{ testimonial.testimonial_id }}'><button align="right" type="button" class="btn btn-success float-right">Give Thanks</button></a></h3>
 </div>
 {% endfor %}
 {% endif %}
